@@ -1,0 +1,24 @@
+<div class="container">
+    <form action="/camp" method="post">
+        <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+        <div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Name</label>
+                <input type="text" class="form-control" maxlength="80" name="name">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Preis</label>
+                <input type="text" class="form-control" maxlength="8" name="price">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Plaetze</label>
+                <input type="text" class="form-control" maxlength="255" name="spots">
+            </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Beschreibung</label>
+                <input type="text" maxlength="255" class="form-control" size="40" name="description">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Hinzufügen</button>
+    </form>
+</div>

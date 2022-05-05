@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
 * {
     box-sizing: border-box;
 }
@@ -41,7 +42,7 @@ body {
     display: block;
     text-decoration: none;
     color: #A11111;
-    font-size: 32px;
+    font-size: 24px;
     padding: 1rem;
 }
 .navbar-links li:hover {
@@ -284,7 +285,7 @@ footer *{
 }
 
 .btn {
-    background: none;
+    background: #e9e2c8;
     border: none;
     cursor: pointer;
     line-height: 1.5;

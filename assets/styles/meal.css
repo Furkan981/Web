@@ -1,0 +1,13 @@
+.meal-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.meal-th, .meal-td {
+    text-align: left;
+    padding: 8px;
+}
+
+.meal-tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

@@ -50,6 +50,14 @@ module.exports.datastores = {
     ***************************************************************************/
     // adapter: 'sails-mysql',
     // url: 'mysql://user:password@host:port/database',
+    // url: 'mysql://user2:a10899@193.196.53.194:33061/campingportal'
+    adapter: 'sails-mysql',
+    host: '193.196.53.194',
+    port: 33061,
+    user: 'user2',
+    password: 'a10899',
+    database: 'campingportal'
+
 
   },
 

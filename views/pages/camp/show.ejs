@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="m-4">
+        <h1 class="text-4xl font-sans text-gray-500 font-light">Camps Eintraege anzeigen</h1>
+        <div>
+            <div class="row">
+                <div class="col-2">
+                    Name
+                </div> 
+                <div class="col-10">
+                    <%= camp.name %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Preis
+                </div> 
+                <div class="col-10">
+                    <%= camp.price %>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    Beschreibung
+                </div> 
+                <div class="col-10">
+                    <%= camp.description %>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-2">
+                    Plaetze
+                </div> 
+                <div class="col-10">
+                    <%= camp.spots %>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Aktualisieren</a>
+    <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
+    <a class="btn btn-primary" href="/camp">Camps</a>
+</div>
