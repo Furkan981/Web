@@ -85,6 +85,7 @@ module.exports.routes = {
   'GET /camp/:id': { action: 'camp/find-one' },
   
   'GET /camp': { action: 'camp/find' },
+  //test dev
 /*
  
     'GET /camp/new': { controller: 'CampArealController', action:'new' },
