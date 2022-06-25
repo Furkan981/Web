@@ -14,7 +14,8 @@ html, body {
   // ^^The above is to disable "importantRule" and "duplicateProperty" rules.
   min-height: 100%;
   position: relative;
-  padding-bottom: @footer-height;
+  padding-bottom: (@footer-height/2);
+  background-color: whitesmoke;
 }
 
 [purpose='page-footer'] {
@@ -37,7 +38,7 @@ body.detected-mobile {
 
 @media (max-width: 800px) {
   [purpose='page-wrap'] {
-    padding-bottom: 75px;
+    padding-bottom: (@footer-height/2);
     [purpose='page-footer'] {
       height: 75px;
       [purpose='footer-copy'], [purpose='footer-nav'] {
@@ -51,7 +52,7 @@ body.detected-mobile {
 
 @media (max-width: 575px) {
   [purpose='page-wrap'] {
-    padding-bottom: 100px;
+    padding-bottom: (@footer-height/2);
     [purpose='page-footer'] {
       height: 100px;
     }

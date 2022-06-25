@@ -9,6 +9,9 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.page-wrap{
+    background-color: whitesmoke;
+}
 Html, body
 {
     max-width: 100%;
@@ -165,7 +168,7 @@ footer {
 .footer{
     background-color: #E9E2C8;
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
 }
