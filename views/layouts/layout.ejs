@@ -51,25 +51,26 @@
   </head>
   <body>
     <div purpose="page-wrap">
-      <header class="navbar navbar-expand-sm flex-column flex-md-row justify-content-between" purpose="page-header">
+      <header class="navbar" purpose="pagre-header">
         <a style="cursor: pointer;" class="navbar-brand mr-0" href="/"><img class="logo" alt="Camp-Portal logo" src="/images/camplogo.jpg"/></a>
-        <nav class="navbar">
+        <h1>Camp-Portal</h1>
+        <nav>          
           <div class="navbar-links">
-          <!-- LOGGED-IN NAVIGATION -->
-          <% if(me) { %>
-            <a href="/contact">Help</a>
-            <!-- Only in desktop nav -->
-                <a  href="/account">Settings</a>
-                <a  href="/logout">Sign out</a>
-            
-          <% } else { %>
-          <!-- LOGGED-OUT NAVIGATION -->
-          <a href="/faq">FAQ</a>
-          <a href="/login">Log in</a>
-          <!-- Only in desktop nav -->
-          <a href="/signup">Sign up</a>
-          <% } %>
-        </div>
+            <!-- LOGGED-IN NAVIGATION -->
+             <% if(me) { %>
+                <a href="/contact">Help</a>
+                <!-- Only in desktop nav -->
+                  <a  href="/account">Settings</a>
+                  <a  href="/logout">Sign out</a>
+
+             <% } else { %>
+              <!-- LOGGED-OUT NAVIGATION -->
+              <a href="/faq">FAQ</a>
+              <a href="/login">Log in</a>
+             <!-- Only in desktop nav -->
+              <a href="/signup">Sign up</a>
+              <% } %>
+          </div>
         </nav>
       </header>
 
@@ -102,7 +103,7 @@
                         <li><a href="/legal/terms">cookies</a></li>
                     </ul>
                 </div>
-                <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %> <a target="_blank" href="/">Camp-Portal</a>. <br class="d-block d-sm-none"/>All rights reserved.</small>
+                
                 <div class="footer-col-right">
                     <!--<h4>follow us</h4>-->
                     <div class="social-links social-links">
@@ -114,6 +115,7 @@
                 </div>
             </div>
         </div>
+        <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %> <a target="_blank" href="/">Camp-Portal</a>. <br class="d-block d-sm-none"/>All rights reserved.</small>
     </footer>
     </div>
 
