@@ -12,8 +12,11 @@ module.exports = {
   attributes: {
     name:{type : 'string', columnType : 'varchar(255)', required : true},
     description:{type : 'string', columnType : 'varchar(255)', required : false},
-    price: { type: 'number',  columnType: 'DECIMAL (6,2)',  required: true},
-    spots:{type : 'number',  columnType: 'DECIMAL (6,2)',  required: true},
+    price: { type: 'number',  columnType: 'DECIMAL (6,2)',  required: false},
+    spots: {
+      collection: 'spots',
+      via: 'camp'
+  },
   },
 
 };
