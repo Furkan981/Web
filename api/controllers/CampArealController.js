@@ -38,7 +38,7 @@ module.exports = {
     } else {
       camps = await Camp.find();
     }
-    res.view('pages/camp/index', { camps: camps });
+    res.view('pages/camp/camp', { camps: camps });
   },
 
   findOne: async function (req, res) {
