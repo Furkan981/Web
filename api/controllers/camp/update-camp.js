@@ -4,10 +4,15 @@ module.exports = {
   friendlyName: 'Create',
 
 
-  description: 'Create camping-areal.',
+  description: 'Create camp.',
 
 
   inputs: {
+    id: {
+      description: 'The id of the camp.',
+      type: 'number',
+      required: true
+    },
     name: {
       description: 'The name of the camp.',
       type: 'string',
@@ -20,13 +25,8 @@ module.exports = {
     price: {
       description: 'The price of the camp.',
       type: 'number',
-      required: true
+      required: false
     },
-    spots: {
-      description: 'The amount of camping-spots.',
-      type: 'number',
-      required: true
-    }
   },
 
 
@@ -39,9 +39,10 @@ module.exports = {
 
 
   fn: async function (inputs) {
-    sails.log.debug("Create new camp....")
-    let camp = await Camp.create(inputs).fetch();
-    sails.log.debug("New camp....")
+    sails.log.debug("Update camp....")
+    sails.log(inputs);
+    let camp = await Camp.updateOne({id: inputs.id}).set(inputs);
+    sails.log.debug("Updated camp....")
     sails.log.debug(camp)
     if (!camp) { throw 'notFound'; }
     return {

@@ -4,7 +4,7 @@ module.exports = {
   friendlyName: 'Edit',
 
 
-  description: '',
+  description: 'Edit current camp',
 
 
   inputs: {
@@ -24,7 +24,10 @@ module.exports = {
     notFound: {
       description: 'No camp with the specified ID was found in the database.',
       responseType: 'notFound'
-    }
+    },
+    redirect: {
+      responseType: 'redirect'
+  }
   },
 
   fn: async function ({id}) {

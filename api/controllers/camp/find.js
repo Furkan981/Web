@@ -16,7 +16,7 @@ module.exports = {
     success: {
       responseType: 'view',
       viewTemplatePath: 'pages/camp/camp'
-    }
+    },
   },
 
   fn: async function (inputs) {
