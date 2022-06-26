@@ -315,9 +315,6 @@ footer .footer-item li a {
         font-size: 0%;
     }
     /* Footer */
-    .footer-col-right{
- 
-    }
 }
 @media(max-width: 500px){
     .navbar h1{
