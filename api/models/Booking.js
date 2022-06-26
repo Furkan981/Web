@@ -17,7 +17,7 @@ module.exports = {
             model: 'camp',required: true,
         },
         spots: {
-            collection: 'spots',via: 'bookings'
+            collection: 'spots',via: 'buchungen'
         },
 
     },

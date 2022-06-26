@@ -10,16 +10,15 @@
 module.exports = {
 
     attributes: {
-      spotnumber:{type : 'number', autoIncrement: true},
-      qm:{type : 'string', columnType : 'varchar(255)', required : false},
+      spotnumber:{type : 'number', required: true},
       price: { type: 'number',  columnType: 'DECIMAL (6,2)',  required: true},
-      bookings: {
+      qm:{type : 'number', required : false},
+      owner: { model: 'camp'},
+      buchungen: {
         collection: 'booking',
         via: 'spots'
     },
-      camp: {
-        model: 'Camp'
-    },
+    
 
 
     },

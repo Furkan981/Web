@@ -1,0 +1,33 @@
+/* 
+    avatar:{type: 'ref', columnType:'blob', required: true},
+    email: {type: 'string',required : true},
+    phone: {type: 'string',required : true},
+    PLZ: {type: 'string',required : true},
+    ort: {type: 'string',required : true},
+    adress: {type: 'string',required : true},
+
+
+
+
+
+    wc:{type: 'boolean', defaultsTo: false, },
+        internet:{type: 'boolean', defaultsTo: false, },
+        dusche:{type: 'boolean', defaultsTo: false, },
+        hunde:{type: 'boolean', defaultsTo: false, },
+        //Aktivitäten
+        schwimmen:{type: 'boolean', defaultsTo: false, },
+        strand:{type: 'boolean', defaultsTo: false, },
+        wandern:{type: 'boolean', defaultsTo: false, },
+        volleyball:{type: 'boolean', defaultsTo: false, },
+        //landmarks
+        festung:{type: 'boolean', defaultsTo: false, },
+        kirche:{type: 'boolean', defaultsTo: false, },
+        zoo:{type: 'boolean', defaultsTo: false, },
+        museum:{type: 'boolean', defaultsTo: false, },
+        //anbindung
+        zug:{type: 'boolean', defaultsTo: false, },
+        bus:{type: 'boolean', defaultsTo: false, },
+        schiff:{type: 'boolean', defaultsTo: false, },
+
+        
+        */

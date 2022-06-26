@@ -30,7 +30,7 @@ module.exports = {
        sails.log("Destroyed: "+camp); 
        return "/camp";
     } else {
-      sails.log("Can not destroy: "+id);
+      sails.log("Can not destroy (not found): "+id);
       return "/camp";
     };
   }

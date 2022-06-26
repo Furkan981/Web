@@ -19,7 +19,10 @@ module.exports = {
 
   fn: async function () {
 
-    return {};
+
+    let camps = await Camp.find();
+    sails.log.debug(camps)
+    return ({ camp: camps });
 
   }
 
