@@ -85,7 +85,7 @@ module.exports.routes = {
   'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
   'GET /camp/:id': { action: 'camp/find-one' },
   'GET /camp': { action: 'camp/find' },
-  
+  //'GET /camp': { action: 'CampArealController' },
   
   // BOOT Einzelansicht
   //

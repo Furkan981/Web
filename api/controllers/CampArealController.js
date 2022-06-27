@@ -7,6 +7,20 @@
 
 const Sails = require("sails/lib/app/Sails");
 
+
+module.exports = {
+  list:function(req, res){
+    Camp.find({}).exec(function(err, camps) {
+      if(err){
+        res.send(500, {error: 'Database Error'});
+        }
+        res.view('pages/dashboard/welcome', {camps:camps});
+      });
+    }
+  };
+
+
+/*
 module.exports = {
 
   new: async function (req, res) {
@@ -65,4 +79,4 @@ module.exports = {
     res.redirect('/camp');
   }
 };
-
+*/

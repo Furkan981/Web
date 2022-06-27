@@ -29,7 +29,10 @@ module.exports = {
       throw {redirect:'/welcome'};
     }
 
-    return {};
+    let camps;
+    camps = await Camp.find()
+
+    return {camps:camps};
 
   }
 

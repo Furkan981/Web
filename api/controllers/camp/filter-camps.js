@@ -44,7 +44,7 @@ module.exports = {
         let sql_cat = inputs.cat.split(',')
         
 
-        let sql = "SELECT * FROM products as b WHERE b.category in ($1) AND b.preis >= ($2) AND b.preis <= ($3)"
+        let sql = "SELECT * FROM camp as b,tabelle as a WHERE b.category in ($1) AND b.preis >= ($2) AND b.preis <= ($3)"
         var rawRes = await sails.sendNativeQuery(sql, [sql_cat, inputs.min, inputs.max])
 
         let productss = []

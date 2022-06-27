@@ -22,7 +22,7 @@ module.exports = {
 
     let camps = await Camp.find();
     sails.log.debug(camps)
-    return ({ camp: camps });
+    return ({ camps: camps });
 
   }
 

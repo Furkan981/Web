@@ -29,7 +29,7 @@ function updateDisplay() {
     
 }
 
-function find() {
+function findCamps() {
 
     let origin = window.location.origin
     let url = new URL(origin + '/api/v1/filtercamps');
