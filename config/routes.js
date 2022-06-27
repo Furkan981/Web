@@ -67,7 +67,8 @@ module.exports.routes = {
    
   // My Routes
   //
-  'GET /admin': { view: 'pages/admin' },
+  'GET /test': { controller: 'CampArealController', action:'find' },
+  'GET /admin': { view: 'pages/camp/all-camps' },
   'GET /menu': { action: 'menu/show' },
   // 
   // Camps hinzufügen

@@ -16,7 +16,24 @@ module.exports = {
         }
         res.view('pages/dashboard/welcome', {camps:camps});
       });
-    }
+    },
+
+    find: async function (req, res) {
+      sails.log.debug("List all camps....")
+      if (req.query.q && req.query.q.length > 0) {
+        camps = await Camp.find({
+          name: {
+            'contains': req.query.q
+          }
+        })
+      } else {
+        camps = await Camp.find();
+      }
+      //res.view('pages/admin', { camps: camps });
+      res.send(camps);
+    },
+
+
   };
 
 

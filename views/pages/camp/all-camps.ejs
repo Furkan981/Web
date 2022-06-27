@@ -1,33 +1,27 @@
 <div class="container">
+    
     <div class="upper_body">
         <form action="/camp">
             <input type="text" value="" length="20" name="q" placeholder="Search..">
             <button type="submit">Suche</button>
         </form>
     </div>
+
+
     
-    <div class="item-content">
-        <table class="table">
-            <thead>
-                <th>Name</th>
-                <th>Preis</th>
-            </thead>
-            <tbody>
-                <% camps.forEach(function(camp){ %>
-                    <tr>
-                        <td>
-                            <%= camp.name %>
-                        </td>
-                        <td>
-                            <%= camp.price %>
-                        </td>
-                        <td> <a class="badge badge-primary" href="/camp/<%= camp.id %>">anzeigen</a></td>
-                    </tr>
-                    <% }); %>
-            </tbody>
-        </table>
-        <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
+    <div class="search-wrapper">
+        <label for="search">Search Users</label>
+        <input type="search" id="search" data-search>
     </div>
+    <div class="user-cards" data-user-cards-container></div>
+    <template data-user-template>
+        <div class="card">
+        <div class="header" data-header></div>
+        <div class="body" data-body></div>
+        </div>
+    </template>
+    
+    
     
     <div class="card__container">
             <div class="card">  
@@ -101,11 +95,12 @@
          <button class="btn draw-border">Buchen</button>
         </div>
     </div>
-    </div>
+</div>
     
-    <script>
+    <script defer>
         window.onload = () => {
             //findCamps()
+            findCards();
         }
     </script>
     <%- /* Expose locals as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
