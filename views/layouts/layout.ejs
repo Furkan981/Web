@@ -56,17 +56,36 @@
           <div class="navbar-links">
             <!-- LOGGED-IN NAVIGATION -->
              <% if(me) { %>
-                <a href="/contact">Help</a>
-                <!-- Only in desktop nav -->
-                  <a  href="/account">Settings</a>
-                  <a  href="/logout">Sign out</a>
-
+              <div id="dropdownmain">
+                <div class="nav-item dropdown d-none d-sm-block" id="dropdown">
+                  <a class="nav-link dropdown-toggle" id="header-account-menu-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                  <div  class="dropdown-menu" aria-labelledby="header-account-menu-link">
+                    <div class="dropthefuckdown">
+                        <a class="dropdown-item" id="testen" href="/contact">Help</a>
+                        <a class="dropdown-item"  href="/account">Settings</a>
+                        <a class="dropdown-item" href="/logout">Sign out</a>
+                    </div>
+                    </div>
+               </div>
+              </div>
+              
+              <input type="checkbox" id="hamburger-input" class="burger-shower" />
+              <label id="hamburger-menu" for="hamburger-input">
+                <nav id="sidebar-menu">
+                  <h3>Menu</h3>
+                  <ul>
+                    <li><a href="/contact">Help</a></li>
+                    <li><a href="/account">Settings</a></li>
+                   <li><a href="/logout">Sign out</a></li>
+                  </ul>
+                </nav>
+              </label>
              <% } else { %>
               <!-- LOGGED-OUT NAVIGATION -->
-              <a href="/faq">FAQ</a>
-              <a href="/login">Log in</a>
-             <!-- Only in desktop nav -->
-              <a href="/signup">Sign up</a>
+              <div id="notloggedin">
+                <a href="/faq">FAQ</a>
+                <a href="/login">Log in</a>
+              </div>
               <% } %>
           </div>
         </nav>
@@ -88,7 +107,6 @@
       <% } %>
 
       <%- body %>
-
       <footer class="footer">
         <div class="footer__container">
             <div class="row">
@@ -116,7 +134,6 @@
         <small purpose="footer-copy">Copyright &copy; <%= sails.config.custom.platformCopyrightYear %> <a target="_blank" href="/">Camp-Portal</a>. <br class="d-block d-sm-none"/>All rights reserved.</small>
     </footer>
     </div>
-
 
     <% /*
       Client-side JavaScript
@@ -157,6 +174,7 @@
     <script src="/js/components/modal.component.js"></script>
     <script src="/js/components/stripe-card-element.component.js"></script>
     <script src="/js/utilities/open-stripe-checkout.js"></script>
+    <script src="/js/dropdown.js"></script>
     <script src="/js/pages/account/account-overview.page.js"></script>
     <script src="/js/pages/account/edit-password.page.js"></script>
     <script src="/js/pages/account/edit-profile.page.js"></script>

@@ -1,1 +1,2 @@
 Schwarz: #5f5f64
+Main farbe: #e9e2c8
