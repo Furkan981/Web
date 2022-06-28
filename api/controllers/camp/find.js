@@ -15,8 +15,8 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      //viewTemplatePath: 'pages/camp/camp'
-      viewTemplatePath: 'pages/dashboard/welcome'
+      viewTemplatePath: 'pages/camp/camp'
+      //viewTemplatePath: 'pages/dashboard/welcome'
     },
   },
 
