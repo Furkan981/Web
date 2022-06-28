@@ -1,34 +1,34 @@
-<div id="show">
+<div id="booking">
     <div class="upper_body">
-    <a class="btn" href="/camp" style="width: auto;font-size: xx-small;font-weight: 900;"><< zurück zu Camps</a>
+    <a class="btn" href="/camp" style="width: auto;font-size: xx-small;font-weight: 900;"><< zurück zur Übersicht Camp </a>
     </div>
-    
+
     <div class="allcenter" >
-            <div class="allcenter">
-                <h1 style="text-align: left">Camp <%= camp.name %></h1>
-                    <div class="card__containers">
-                        <div class="cards">  
+        <div class="allcenter">
+            <h1 style="text-align: left">Camp</h1>
+                <div class="card__containers">
+                    <div class="cards">   
                             <img src="/images/mainauhd.jpg" alt="Camp01" class="card__images">
                             <div class="grid-containers">
                                 <hr/>
                                 <div class="grid-child-posts">
-                                    Ort: <%= camp.ort %> Konstanz
+                                    Ort:  Konstanz
                                 </div>
                                 <hr/>
                                 <div class="grid-child-posts">
-                                    Preis: <%= camp.price %>€-Nacht
+                                    Preis: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-followers">
-                                    Beschreibung: <%= camp.description %>
+                                    Beschreibung: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-followers">
-                                    Freie Plätze: <%= camp.spots %> 5 freie Plätze
+                                    Freie Plätze: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-followers">
-                                    Bewertung: <%= camp.assesment %> ★★★★✰
+                                    Bewertung: 
                                 </div>
                                
                             </div>
@@ -67,39 +67,46 @@
                                 <div class="grid-child-posts">
                                     Zug, Bus, Schiff
                                 </div>
+                                <hr/>
                             </div>
                         </div>
                         <div class="cards">  
-                    
+                            <div class="grid-child-posts">
                                 <h5 style="text-decoration: underline 0.1rem;">Kontaktinformationen</h5>
-                     
+                            </div>
                             <div class="grid-containers">
                                 <hr/>
                                 <div class="grid-child-posts">
-                                    Straße: <%= camp.vermieterId %> 
+                                    Straße: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-posts">
-                                    Ort: <%= camp.price %>
+                                    Ort: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-followers">
-                                    Telefon: <%= camp.description %>
+                                    Telefon: 
                                 </div>
                                 <hr/>
                                 <div class="grid-child-followers">
-                                    Mail: <%= basket[2][0].owner %>
+                                    Mail: 
                                 </div>
-
-                               
+                                <hr/>
                             </div>
                         </div>
                 </div>
             </div>
+            <div class="platzauswahl">
+                <div class="grid-child-followers">
+                    Select platz:
+
+                    () () () () () () () () () (x)
+                </div>
+                <hr/>
+            </div>
             <div class="cancelbutton">
-                <a class="btn btn-primary" href="/camp/<%=camp.id%>/booking">Buchen</a>
-            <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Bearbeiten</a>
-            <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
+                <a class="btn btn-primary" href="/camp/">Reservieren</a>
+                <a class="btn btn-primary" href="/camp/">Abbrechen</a>
             </div>
     </div>
 </div>
