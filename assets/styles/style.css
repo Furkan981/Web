@@ -429,6 +429,7 @@ footer .footer-item li a {
     .navbar h1{
         padding: 10px;
         font-size: 2.3em;
+        margin-left: 0;
     }
     .navbar a{
         font-size: 1.1rem;

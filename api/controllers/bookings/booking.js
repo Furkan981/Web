@@ -19,7 +19,7 @@ module.exports = {
     exits: {
         success: {
             responseType: 'view',
-            viewTemplatePath: 'pages/booking/confirm'
+            viewTemplatePath: 'pages/booking/booking'
         },
         notFound: {
             description: 'Sind in den routes',
@@ -61,7 +61,7 @@ module.exports = {
             bis,
             status,
             userId,
-            products
+            products,
 
         };
     }

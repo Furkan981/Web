@@ -17,8 +17,15 @@
                 <label class="col-form-label-lg">Beschreibung</label>
                 <input type="text" maxlength="255" class="form-control" size="40" value="<%= camp.description %>" name="description">
             </div>
+            <div class="form-group">
+                <label class="col-form-label-lg">Spots</label>
+                <input type="text" maxlength="2" class="form-control" value="<%= camp.spots %>" name="spots">
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Aktualisieren</button>
+        <div class="allcenter">
+            <a class="btn " href="/camp/<%= camp.id %>">Cancel</a>
+            <button type="submit" class="btn btn-primary">Aktualisieren</button>
+        </div>
     </form>
 </div>
 </div>

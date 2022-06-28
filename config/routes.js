@@ -103,6 +103,8 @@ module.exports.routes = {
 
  // Booking Prozess
   //
+  'GET /camp/:id/booking': { action: 'bookings/booking' },
+
   'GET /booking/confirm': { action: 'bookings/booking' },
   'GET /booking/payment': { action: 'bookings/payment-controller' },
   'GET /booking/finish': { action: 'bookings/finish-controller' },

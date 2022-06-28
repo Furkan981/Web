@@ -30,11 +30,16 @@ module.exports = {
         let sql = "SELECT * FROM camp a WHERE a.vermieterId = $1"
         var res = await sails.sendNativeQuery(sql, [id])
 
+        let resuser = "SELECT * FROM user a WHERE a.id = $1"
+        var user = await sails.sendNativeQuery(user,[id])
+
         let camps = []
+        let users =[]
 
         res.rows.forEach(ele => camps.push(ele))
+        resuser.rows.forEach(el => users.push(el))
 
-        return camps;
+        return { camps,users:users}
 
 
     }
