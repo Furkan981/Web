@@ -67,9 +67,10 @@ module.exports.routes = {
    
   // My Routes
   //
+  'GET /admin': { view: 'pages/admin' },
   'GET /test': { controller: 'CampArealController', action:'find' },
-  'GET /admin': { view: 'pages/camp/all-camps' },
-  'GET /menu': { action: 'menu/show' },
+  // test home 'GET /admin': { view: 'pages/camp/all-camps' },
+  'GET /menu': { view: 'pages/camp/all-camps' },
   // 
   // Camps hinzufügen
   'GET /camp/new': { view: 'pages/camp/new' },
@@ -78,6 +79,7 @@ module.exports.routes = {
   'GET /camp/:id/edit': { action: 'camp/edit-camp' },
   'POST /camp/:id/update': { action: 'camp/update-camp' },
   'GET /camp/:id/destroy': { action: 'camp/delete-camp' },
+
 
 
 //////////////////////////////////////////////////////////////////////
