@@ -7,94 +7,66 @@
         </form>
     </div>
 
-
-    
     <div class="search-wrapper">
         <label for="search">Search Users</label>
         <input type="search" id="search" data-search>
     </div>
+   <!-- 
+    
     <div class="user-cards" data-user-cards-container></div>
     <template data-user-template>
-        <div class="card">
+        <div class="card-dyn">
         <div class="header" data-header></div>
         <div class="body" data-body></div>
         </div>
     </template>
+-->
     
-    
-    
-    <div class="card__container">
+    <!--
+    <div class="card__container" data-user-cards-container>
+        <template data-user-template>
             <div class="card">  
-                <img src="/images/konstanz.jpg" alt="Camp01" class="card__image">
-                <p class="card__name">Konstanz</p>
+                <div class="header" data-header>
+                <img src="/images/konstanz.jpg" alt="Camp01" class="card__image" data-image>
+                <p class="card__name"></p>
+                </div>
+                <div class="body" data-body>
                 <div class="grid-container">
-                    <div class="grid-child-posts">
-                        17€-Nacht
-                    </div>
-                    <div class="grid-child-followers">
-                        5 freie Plätze
-                    </div>
+                    <div class="grid-child-posts"></div>
+                    <div class="grid-child-followers"></div>
+                </div>
                 </div>
                 <button class="btn draw-border">Infos</button>
                 <button class="btn draw-border">Buchen</button>
             </div>
-        <div class="card">
-            <img src="/images/mainau.jpg" alt="Camp01" class="card__image">
-            <p class="card__name">Insel Mainau</p>
+        </template>
+        
+    </div>  -->
+       
+       <div class="card__container" data-user-cards-container>
+        <template data-user-template>
+        <div class="user-cards" >
+          <img src="/images/campportal.jpg" class="card__image">
+           <p class="card__name" data-title></p>
             <div class="grid-container">
-                <div class="grid-child-posts">
-                    25€-Nacht
-                </div>
-                <div class="grid-child-followers">
-                    3 freie Plätze
-                </div>
-            </div>
-            <button class="btn draw-border">Infos</button>
-            <button class="btn draw-border">Buchen</button>
-        </div>
-        <div class="card">
-            <img src="/images/kreuzlingen.jpg" alt="Camp01" class="card__image">
-            <p class="card__name">Kreuzlingen</p>
-            <div class="grid-container">
-                <div class="grid-child-posts">
-                    17€-Nacht
-                </div>
-                <div class="grid-child-followers">
-                    5 freie Plätze
-                </div>
-            </div>
-            <button class="btn draw-border">Infos</button>
-            <button class="btn draw-border">Buchen</button>
-        </div>
-        <div class="card">
-            <img src="/images/camplogo2.PNG" alt="Camp02" class="card__image">
-            <p class="card__name">Singen</p>
-            <div class="grid-container">
-                <div class="grid-child-posts">
-                    10€-Nacht
-                </div>
-                <div class="grid-child-followers">
-                    10 freie Plätze
-                </div>
-            </div>
-            <button class="btn draw-border">Infos</button>
-            <button class="btn draw-border">Buchen</button>
-        </div>
-        <div class="card">
-          <img src="/images/campportal.jpg" alt="Camp03" class="card__image">
-           <p class="card__name">Überlingen</p>
-            <div class="grid-container">
-               <div class="grid-child-posts">
+               <div class="grid-child-posts" data-price>
                    15€-Nacht
                </div>
-               <div class="grid-child-followers">
+               <div class="grid-child-followers" data-spots>
                   32 freie Plätze
               </div>
           </div>
-           <button class="btn draw-border">Infos</button>
-         <button class="btn draw-border">Buchen</button>
+          
+        <a id='action-link' data-linker href='/camp'>
+            <button class="btn draw-border" data-link >Infos</button>
+        </a>
+        <a id='action-link' data-linker href='/camp'>
+            <button class="btn draw-border">Buchen</button>
+        </a>
         </div>
+    </template>
     </div>
+   
 </div>
     
     <script defer>

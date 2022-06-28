@@ -6,29 +6,29 @@
       </form>
   </div>
  
-  <div class="item-content">
-    <table class="table">
-        <thead>
-            <th>Name</th>
-            <th>Preis</th>
-        </thead>
-        <tbody>
-            <% camps.forEach(function(camp){ %>
-                <tr>
-                    <td>
-                        <%= camp.name %>
-                    </td>
-                    <td>
-                        <%= camp.price %>
-                    </td>
-                    <td> <a class="badge badge-primary" href="/camp/<%= camp.id %>">anzeigen</a></td>
-                </tr>
-                <% }); %>
-        </tbody>
-    </table>
-    <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
-</div>
-
+   <div class="item-content">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Preis</th>
+            </thead>
+            <tbody>
+                <% camps.forEach(function(camp){ %>
+                    <tr>
+                        <td>
+                            <%= camp.name %>
+                        </td>
+                        <td>
+                            <%= camp.price %>
+                        </td>
+                        <td> <a class="badge badge-primary" href="/camp/<%= camp.id %>">anzeigen</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
+    </div>
+    
   
   <div class="card__container">
           <div class="card">  

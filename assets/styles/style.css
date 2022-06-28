@@ -542,23 +542,25 @@ footer .footer-item li a {
   }
   
   .user-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: inline-grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));*/
     gap: .25rem;
     margin-top: 1rem;
+    margin-right: 0.15rem;
+    text-align: center;
   }
   
-  .card {
+  .card-dyn {
     border: 1px solid black;
     background-color: white;
     padding: .5rem;
   }
   
-  .card > .header {
+  .card-dyn > .header {
     margin-bottom: .25rem;
   }
   
-  .card > .body {
+  .card-dyn > .body {
     font-size: .8rem;
     color: #777;
   }
