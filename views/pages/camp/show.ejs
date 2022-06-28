@@ -1,46 +1,119 @@
 <div id="show">
-    <div class="container">
-        <div class="m-4">
-            <h1 class="text-4xl font-sans text-gray-500 font-light">Camps Eintraege anzeigen</h1>
-            <div>
-                <div class="row">
-                    <div class="col-2">
-                        Name
-                    </div> 
-                    <div class="col-10">
-                        <%= camp.name %>
+    <div class="upper_body">
+    <a class="btn" href="/camp" style="width: auto;font-size: xx-small;font-weight: 900;"><< zurück zu Camps</a>
+    </div>
+
+    <div class="container pt-5 pb-5 allcenter" >
+            <div class="m-4" style="max-width: 700px">
+                <h1 style="text-align: left">Camp <%= camp.name %></h1>
+                <div id="Campbild">
+                    <div class="card__containers">
+                        <div class="cards">  
+                            <img src="/images/mainauhd.jpg" alt="Camp01" class="card__images">
+                            <div class="grid-containers">
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    Ort: <%= camp.ort %> Konstanz
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    Preis: <%= camp.price %>€-Nacht
+                                </div>
+                                <hr/>
+                                <div class="grid-child-followers">
+                                    Beschreibung: <%= camp.description %>
+                                </div>
+                                <hr/>
+                                <div class="grid-child-followers">
+                                    Freie Plätze: <%= camp.spots %> 5 freie Plätze
+                                </div>
+                                <hr/>
+                                <div class="grid-child-followers">
+                                    Bewertung: <%= camp.assesment %> ★★★★✰
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="cards">  
+                            <div class="grid-containers">
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    <h5 style="text-decoration: underline 0.1rem;">Ausstattungen</h5>
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    WC, Internet, Dusche, Hunde
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    <h5 style="text-decoration: underline 0.1rem;">Aktivitäten</h5>
+                                </div>
+                                <hr/>
+                                <div class="grid-child-followers">
+                                   Schwimmen, Strand, Wandern, Volleyball,
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    <h5 style="text-decoration: underline 0.1rem;">Landmarks</h5>
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    Festung, Kirche, Zoo, Museum
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    <h5 style="text-decoration: underline 0.1rem;">Anbindung</h5>
+                                </div>
+                                <hr/>
+                                <div class="grid-child-posts">
+                                    Zug, Bus, Schiff
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        Preis
-                    </div> 
-                    <div class="col-10">
-                        <%= camp.price %>
+                <div id="Cempbildtext1"></div>
+                <div id="Cempbildtext2"></div>
+
+
+                <!--<div class="textrows">
+                    <div class="row"> 
+                <div class="col-2">Name: 
+                        </div> 
+                        <div class="col-8">
+                            <%= camp.name %>
+                        </div> 
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-2">
-                        Beschreibung
-                    </div> 
-                    <div class="col-10">
-                        <%= camp.description %>
+                    <div class="row">
+                        <div class="col-7">
+                            Preis:  
+                        </div> 
+                        <div class="col-5">
+                            <%= camp.price %>
+                        </div> 
                     </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-2">
-                        Plaetze
-                    </div> 
-                    <div class="col-10">
-                        <%= camp.spots %>
+                    <div class="row">
+                        <div class="col-7">
+                            Beschreibung:  
+                        </div> 
+                        <div class="col-5">
+                            <%= camp.description %>
+                        </div> 
                     </div>
-                </div>
-                
+                    
+                    <div class="row">
+                        <div class="col-7">
+                            Plaetze:  
+                        </div> 
+                        <div class="col-5">
+                            <%= camp.spots %>
+                        </div> 
+                    </div>
+                </div> -->
             </div>
-        </div>
-        <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Aktualisieren</a>
-        <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
-        <a class="btn btn-primary" href="/camp">Camps</a>
+            <div class="cancelbutton">
+            <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Bearbeiten</a>
+            <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
+            </div>
     </div>
 </div>
