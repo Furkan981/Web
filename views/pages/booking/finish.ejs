@@ -1,24 +1,29 @@
-<h1 style="text-align: center; margin-top: 3%;">
-    Bestellübersicht</h1>
-<section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/<%= %>" alt="ProductsBild" style="border-radius: 10%;border: 2px solid #178ca4;" /></div>
-            <div class="col-md-6">
+
+    <div class="container allcenter">
+        <h1>Bestellübersicht</h1>
+        <div class="item-content" style="text-align: -webkit-center;"><!-- -webkit-center -->
+            <img src="/images/mainauhd.jpg" alt="Camp01" class="card__images" style=" height: 250px;width: 250px;  border: 5px solid #5f5f64;   margin-top: 20px; box-shadow: 0 1px 15px #ccbf90;">
+            <hr/>
+            <section class="container">     
                 <h1 class="display-5 fw-bolder">
-                    Sie haben das Camp <%= camps.name%> vom <%= von%> bis zum <%= bis%> für <%= tage%>Tage
-                    gebucht und zwar zum Preis <%= total %>€, je <%= camps.price%>€/Tag.
+                    Sie haben das Camp <strong><%= camps.name%></strong> vom <strong><%= von%></strong> bis zum <strong><%= bis%></strong> für <strong><%= tage%></strong> Tage
+                    gebucht und zwar zum Preis <strong><%= total %></strong>€, je <strong></strong><%= camps.price%>€/Tag.
                     <br>
                     Die Bankdaten, die Sie bei uns hinterlegt haben:
-                    <%= bank.iban%>
-                    <%= bank.kontonr%>
-                    <%= bank.blz%>
-                    <%= bank.bic%>
+                    
+                    <strong><%= bank.iban%></strong>
+                    <strong><%= bank.kontonr%></strong>
+                    <strong><%= bank.blz%></strong>
+                    <strong><%= bank.bic%></strong>
                 </h1>
-                <form action="/dashboard/welcome" method="GET">
-                    <button mt-3 class="btn btn-primary mb-4 btn-outline-info" type="submit">Home</button>
-                </form>
-            </div>
+                        <!--ERROR-->
+                        <div id="err-msg"></div> 
+                        <!--BUTTONS-->
+                        <form action="/dashboard/welcome" method="GET">
+                            <button mt-3 class="btn btn-primary mb-4 btn-outline-info" type="submit">Home</button>
+                        </form>
+                    </form>
+            </section>
         </div>
     </div>
-</section>
+

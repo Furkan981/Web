@@ -6,63 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm booking</title>
 </head>
-
-<h1 style="text-align: center; margin-top: 3%;">Bestellübersicht</h1>
-<div id="app">
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/<%=  %>" alt="ProductsBild" style="border-radius: 10%;border: 2px solid #178ca4;" /></div>
-                <div class="col-md-6">
-                    <div class="small mb-1">
-                        <%= von %> - <%= bis %>
+    <!--NOT ORIGINAL-->
+<div id="camp">
+    <div class="container allcenter">
+            <h1>Bestellübersicht</h1>
+            
+        <div class="item-content" style="text-align: -webkit-center;"><!-- -webkit-center -->
+            <img src="/images/mainauhd.jpg" alt="Camp01" class="card__images" style=" height: 250px;width: 250px;  border: 5px solid #5f5f64;   margin-top: 20px; box-shadow: 0 1px 15px #ccbf90;">
+            <hr/>
+            <h4><%= camps.name %>, vom <%= von %> bis <%= bis %></h4>
+            <section class="container">     
+                        <div id="hierspotsarbnor">
+                        <h4><%= camps.price %>€ pro Tag</h4>
+                        </div>
+                    <hr/>
+                    <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                Totaler Preis
+                            </h4>
+                            <p class="card-text" id="preis">
+                                <%= diffDays * camps.price  %> €
+                            </p>
+                        </div>
                     </div>
-                    <h1 class="display-5 fw-bolder">
-                        <%= camps.name %>
-                    </h1>
-                    <div class="fs-5 mb-5">
-                        <span> <%= camps.price %>€ pro Tag</span>
-                    </div>
-
-                    <form action="/booking/payment" method="GET">
+                        <!--ERROR-->
+                        <div id="err-msg"></div> 
+                        <!--BUTTONS-->
+                        <form action="/booking/payment" method="GET">
                         <button mt-3 class="btn btn-primary mb-4 btn-outline-info" type="submit">Weiter</button>
                     </form>
-                </div>
+                    </form>
+            </section>
+        </div>
+    </div>
+</div>
 
-            </div>
-        </div>
-    </section>
-</div>
-<div class="row ml-auto mr-auto" style="width: 65%; text-align: center;">
-    <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
-        <div class="card-body">
-            <h4 class="card-title">
-                gewünschte Lieferzeit
-            </h4>
-            <p class="card-text" id="bis">
-                <%=  %>
-            </p>
-        </div>
-    </div>
-    <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
-        <div class="card-body">
-            <h4 class="card-title">
-               Totaler Preis
-            </h4>
-            <p class="card-text" id="preis">
-                <%= diffDays * camps.price  %> €
-            </p>
-        
-        </div>
-    </div>
-    <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
-        <div class="card-body">
-            <h4 class="card-title">
-                Status
-            </h4>
-            <p class="card-text">
-                <%=  %>
-            </p>
-        </div>
-    </div>
-</div>
