@@ -9,6 +9,11 @@ module.exports = {
 
     inputs: {
        
+        datevon: {
+            type: 'string',
+            require: true
+        },
+
         datebis: {
             type: 'string',
             require: true
@@ -40,31 +45,30 @@ module.exports = {
         //Session
         let sessionInhalt = this.req.session.basket
         let campIdbooking = sessionInhalt[0]
-
-
+        console.log(campIdbooking)
 
         this.req.session.basket = [];
+        this.req.session.basket.push(inputs.datevon);
         this.req.session.basket.push(inputs.datebis);
-        this.req.session.basket.push('reserviert');
         this.req.session.basket.push(this.req.session.userId);
         this.req.session.basket.push(sessionInhalt[0]);
-        console.log("VON:")
+        console.log("basket:")
         sessionInhalt = this.req.session.basket
         console.log(sessionInhalt)
 
        
-        let bis = sessionInhalt[0]
-        let status = sessionInhalt[1]
+        let von = sessionInhalt[0]
+        let bis = sessionInhalt[1]
         let userId = sessionInhalt[2]
-        let products = sessionInhalt[3]
+        let camps = sessionInhalt[3]
 
 
         // All done.
         return {
+            von,
             bis,
-            status,
             userId,
-            products,
+            camps,
 
         };
     }
