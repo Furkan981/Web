@@ -18,6 +18,7 @@ module.exports.routes = {
   'GET /dashboard/welcome': { action: 'dashboard/view-welcome' },
 
   'GET /faq':                { action:   'view-faq' },
+  'GET /imprint':            { view:   'pages/legal/imprint' },
   'GET /legal/terms':        { action:   'legal/view-terms' },
   'GET /legal/privacy':      { action:   'legal/view-privacy' },
   'GET /contact':            { action:   'view-contact' },
