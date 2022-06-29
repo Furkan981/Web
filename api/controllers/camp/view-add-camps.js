@@ -10,7 +10,7 @@ module.exports = {
     exits: {
 
         success: {
-            viewTemplatePath: 'pages/camp/add-new-camp',
+            viewTemplatePath: 'pages/camp/new',
         },
         redirect: {
             description: 'Dieser Nutzer ist kein Anbieter.',
