@@ -4,36 +4,33 @@
         </div>
     <div class="container allcenter">
         <h1>My Reservations</h1>
-
-        <form action="/camp">
-            <label>Suche</label>
-            <input type="text" value="" length="20" name="q">
-            <button type="submit">Suche</button>
-        </form>
-
         <div class="item-content">
             <table class="table">
                 <thead>
-                    <th>Name</th>
+                    <th>Datum</th>
                     <th>Preis</th>
+                    <th>Camp</th>
                 </thead>
                 <tbody>
-                   <!--  <% camps.forEach(function(camp){ %> -->
+                     <% bookings.forEach(function(booking){ %> 
                         <tr>
                             <td>
-                             <!--    <%= camp.name %> -->
+                                <%= booking.von %> - <%= booking.bis %> 
                             </td>
                             <td>
-                                <!-- <%= camp.price %> -->
+                                <%= booking.total %> 
+                            </td>
+                            <td>
+                                <%= booking.camp %> <%= booking.id %>
                             </td>
                             <td> 
-                            <a class="badge badge-primary" href="/reservations">Anzeigen</a><a class="badge badge-primary" href="">Reservierung löschen</a>
+                            <a class="badge badge-primary" href="/reservations/<%= booking.id %>/delete">Stornieren</a>
+                            
                         </td>
                         </tr>
-                      <!--   <% }); %> -->
+                         <% }); %> 
                 </tbody>
             </table>
-           <!--  <a class="btn btn-primary" href="/account">Zurück</a> -->
         </div>
     </div>
 </div>

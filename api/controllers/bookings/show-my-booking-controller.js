@@ -11,6 +11,11 @@ module.exports = {
     },
 
     exits: {
+        success: {
+            responseType: 'view',
+            viewTemplatePath: 'pages/booking/reservations'
+            //viewTemplatePath: 'pages/dashboard/welcome'
+          },
         redirect: {
             description: 'Dieser Nutzer ist kein Anbieter.',
             responseType: 'redirect',
@@ -24,14 +29,23 @@ module.exports = {
 
         let id = this.req.session.userId;
 
-        let sql = "SELECT * FROM booking b, products bo WHERE b.gast = $1 and b.products = bo.id"
+        let sql = "SELECT * FROM booking b WHERE b.gast = $1"
         var rawRes = await sails.sendNativeQuery(sql, [id])
         console.log(rawRes)
         let booking = []
 
-        rawRes.rows.forEach(ele => booking.push(ele))
+        rawRes.rows.forEach(ele => 
+            
+            booking.push(ele))
         console.log(booking)
-        return booking;
+
+        
+
+
+        return {
+            bookings:booking,
+        }
+            ;
 
 
     }

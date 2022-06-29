@@ -67,20 +67,27 @@ module.exports.routes = {
 
    
   // My Routes
-  'GET /testd' : { view: 'pages/testssss'},
   'GET /admin': { view: 'pages/admin' },
   'GET /test': { controller: 'CampArealController', action:'find' },
-  // test home 'GET /admin': { view: 'pages/camp/all-camps' },
-  'GET /menu': { view: 'pages/camp/all-camps' },
   
+  // //Camps filterSuche
+  'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
+  //'GET /camp': { action: 'CampArealController' },
+  'GET /camp': { action: 'camp/find' },
+  'GET /camp/:id': { action: 'camp/find-one' },
   // Camps hinzufügen
-  'GET /camp/new': { view: 'pages/camp/new' },
+  'GET /camp/new': { action: 'camp/view-add-camps' },
             //'GET /camp/new': { action: 'camp/view-add-camps' },
   'POST /camp': { action: 'camp/add-camp' },
   'GET /camp/:id/edit': { action: 'camp/edit-camp' },
   'POST /camp/:id/update': { action: 'camp/update-camp' },
   'GET /camp/:id/destroy': { action: 'camp/delete-camp' },
 
+// test home 'GET /admin': { view: 'pages/camp/all-camps' },
+/**
+ * all-camps.ejs
+ * 
+ */
 
 
 //////////////////////////////////////////////////////////////////////
@@ -88,15 +95,10 @@ module.exports.routes = {
    'GET /usermanagement' : { view: 'pages/user/usermanagement'},
 
 
-   //RESERVATIONS
-   'GET /reservations' : { view: 'pages/booking/reservations'},
-
-
-  //Camps filterSuche
-  'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
-  'GET /camp/:id': { action: 'camp/find-one' },
-  'GET /camp': { action: 'camp/find' },
-  //'GET /camp': { action: 'CampArealController' },
+   //
+   'GET /reservations' : { action: 'bookings/show-my-booking-controller'},
+   'GET /reservations/:id/delete' : { action: 'bookings/delete-booking'},
+  
   
   // Camp Einzelansicht
   //

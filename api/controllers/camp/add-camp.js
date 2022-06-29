@@ -42,12 +42,12 @@ module.exports = {
 
 
   fn: async function ({name,description,price,spots}) {
-/*
-    if (!this.req.me.isAnbieter && !this.req.me.isSuperAdmin) {
-      console.log('Sie sind kein Anbieter! Werden Sie zuerst Anbieter');
+
+    if (!this.req.me && !this.req.me.isSuperAdmin) {
+      console.log('Sie sind weder eingeloggt noch SuperAdmin');
       throw { redirect: '/' };
   }
-*/
+
     sails.log.debug("Create new camp....")
     sails.log.debug("inputs")
     
