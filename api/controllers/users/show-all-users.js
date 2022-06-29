@@ -14,7 +14,7 @@ module.exports = {
     exits: {
 
         success: {
-            viewTemplatePath: 'pages/account/show-all-users',
+            viewTemplatePath: 'pages/user/usermanagement',
             description: 'Display the welcome page for authenticated users.'
         },
         redirect: {

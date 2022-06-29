@@ -13,28 +13,29 @@
                 <thead>
                     <th>Name</th>
                     <th>E-Mail</th>
+                    <th>superAdmin?</th>
                 </thead>
                 <tbody>
-<!--                     <% camps.forEach(function(camp){ %>
- -->                        <tr>
+                   <% users.forEach(function(user){ %>
+                        <tr>
                             <td>
-                                USERNAME
-                                <!-- <%= camp.name %> -->
+                                <%= user.fullName %>
                             </td>
                             <td>
-                                USERMAIL
-<!--                                 <%= camp.price %>
- -->                            </td>
-                            <td> 
-<!--                             <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a> <a class="badge badge-primary" href="/camp/<%= camp.id %>/edit">Bearbeiten</a></td>-->   
-                                <a class="badge badge-primary" href="/usermanagement">Löschen</a>
+                                <%= user.emailAddress %>
+                           </td>
+                           <td>
+                            
+                            <%= user.isSuperAdmin %>
+                       </td>
+                                <a class="badge badge-primary" href="/users/delete-user/<%= user.id %>">Löschen</a>
                             </td>
                         </tr>
-<!--                         <% }); %>
- -->                </tbody>
+                         <% }); %>
+                </tbody>
             </table>
             <a class="btn btn-primary" href="/account">Zurück</a>
-            <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
+            
         </div>
     </div>
 </div>

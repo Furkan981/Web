@@ -48,27 +48,27 @@ module.exports = {
             console.log("Destroyed Bookings with id: " + bookings[i].id)
         }
 
-        sails.log.debug("Second destroy Products of user: " + id)
+        sails.log.debug("Second destroy camps of user: " + id)
 
-        let sql_2 = "SELECT id FROM products b WHERE b.vermieterId = $1"
-        var rawRes_products = await sails.sendNativeQuery(sql_2, [id])
+        let sql_2 = "SELECT id FROM camp b WHERE b.vermieterId = $1"
+        var rawRes_camps = await sails.sendNativeQuery(sql_2, [id])
 
-        let products = []
-        rawRes_products.rows.forEach(ele => products.push(ele))
+        let camps = []
+        rawRes_camps.rows.forEach(ele => camps.push(ele))
 
-        for (let i = 0; i < products.length; i++) {
-            await Products.destroyOne({ id: products[i].id })
-            console.log("Destroyed Products with id: " + products[i].id)
+        for (let i = 0; i < camps.length; i++) {
+            await Camps.destroyOne({ id: camps[i].id })
+            console.log("Destroyed camps with id: " + camps[i].id)
         }
 
         sails.log.debug("Destroy user: " + id)
         let user = await User.destroyOne({ id: id });
         if (user) {
             sails.log("Destroyed: " + user.id);
-            return "/users/show-all-users";
+            return "/usermanagement";
         } else {
             sails.log("Can not destroy: " + id);
-            return "/users/show-all-users";
+            return "/usermanagement";
         };
     }
 };
