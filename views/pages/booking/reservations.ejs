@@ -1,0 +1,39 @@
+<div id="camp">
+    <div class="upper_body">
+        <a class="btn" href="/account" style="width: auto;font-size: xx-small;font-weight: 900;"><< zurück zur Accountübersicht</a>
+        </div>
+    <div class="container allcenter">
+        <h1>My Reservations</h1>
+
+        <form action="/camp">
+            <label>Suche</label>
+            <input type="text" value="" length="20" name="q">
+            <button type="submit">Suche</button>
+        </form>
+
+        <div class="item-content">
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>Preis</th>
+                </thead>
+                <tbody>
+                   <!--  <% camps.forEach(function(camp){ %> -->
+                        <tr>
+                            <td>
+                             <!--    <%= camp.name %> -->
+                            </td>
+                            <td>
+                                <!-- <%= camp.price %> -->
+                            </td>
+                            <td> 
+                            <a class="badge badge-primary" href="/reservations">Anzeigen</a><a class="badge badge-primary" href="">Reservierung löschen</a>
+                        </td>
+                        </tr>
+                      <!--   <% }); %> -->
+                </tbody>
+            </table>
+           <!--  <a class="btn btn-primary" href="/account">Zurück</a> -->
+        </div>
+    </div>
+</div>

@@ -559,6 +559,8 @@ footer .footer-item li a {
     margin-top: 1rem;
     margin-right: 0.15rem;
     text-align: center;
+    border-style: solid;
+    border-color: seagreen;
   }
   
   .card-dyn {

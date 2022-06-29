@@ -86,6 +86,10 @@ module.exports.routes = {
    //USERS
    'GET /usermanagement' : { view: 'pages/user/usermanagement'},
 
+
+   //
+   'GET /reservations' : { view: 'pages/booking/reservations'},
+
   //Camps filterSuche
   'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
   'GET /camp/:id': { action: 'camp/find-one' },

@@ -1,4 +1,7 @@
 <div id="signup" v-cloak>
+  <div class="upper_body">
+    <a class="btn" href="/login" style="width: auto;font-size: xx-small;font-weight: 900;"><< zurück zum Login</a>
+    </div>
   <div class="container-fluid pt-5 pb-5" v-if="!cloudSuccess">
     <h1 class="text-center">Create an account</h1>
     <div style="max-width: 450px;" class="mx-auto" >
@@ -31,7 +34,7 @@
         </div>
         <cloud-error v-if="cloudError==='emailAlreadyInUse'">It looks like there's already an account with your email address. If you forgot your password, you can recover it <a href="password/forgot">here</a>.</cloud-error>
         <cloud-error v-else-if="cloudError"></cloud-error>
-        <div class="form-group">
+        <div class="form-group allcenter">
           <ajax-button type="submit" :syncing="syncing" class="btn-dark btn-lg btn-block">Create account</ajax-button>
         </div>
       </ajax-form>
