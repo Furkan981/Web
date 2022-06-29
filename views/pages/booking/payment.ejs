@@ -1,3 +1,4 @@
+<div id="payment">
 <div class="container-fluid pt-5 pb-5">
     <h1 class="text-center">Zahlungsmethode</h1>
     <p class="text-center">Wir benötigen noch Ihre Bankverbindung, um mit der Bestellung fortzufahren. <br> Bei weiteren Fragen kontaktieren Sie uns bitte <a href="/contact">hier</a>.</p>
@@ -5,11 +6,12 @@
         <hr/>
         <form action="/booking/finish" method="GET">
             <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-            <input class="form-control" placeholder="IBAN" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="iban">
-            <input class="form-control" placeholder="Kontonummer" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="kontonummer">
-            <input class="form-control" placeholder="BLZ" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="blz">
-            <input class="form-control" placeholder="BIC" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="bic">
+            <input class="form-control" placeholder="IBAN" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="iban" required minlength="6">
+            <input class="form-control" placeholder="Kontonummer" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="kontonummer" required minlength="6" required type="number">
+            <input class="form-control" placeholder="BLZ" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="blz" required minlength="6" required type="number">
+            <input class="form-control" placeholder="BIC" style=" margin-top: 2%; margin-bottom: 2%;border: 2px solid #178ca4;" name="bic" required minlength="6" >
             <button class="btn-outline-info btn-lg btn-block" type="submit" style="margin-left: 0%;">Bestellung abschließen</button>
         </form>
     </div>
+</div>
 </div>

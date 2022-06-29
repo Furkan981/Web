@@ -3,16 +3,21 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/<%= products.bild %>" alt="ProductsBild" style="border-radius: 10%;border: 2px solid #178ca4;" /></div>
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="/<%= %>" alt="ProductsBild" style="border-radius: 10%;border: 2px solid #178ca4;" /></div>
             <div class="col-md-6">
-                <h1 class="display-5 fw-bolder">Sie haben das Produkt
-                    <%= products.titel%> bestellt und können es ab dem
-                    <%= bis%> abholen!</h1>
+                <h1 class="display-5 fw-bolder">
+                    Sie haben das Camp <%= camps.name%> vom <%= von%> bis zum <%= bis%> für <%= tage%>Tage
+                    gebucht und zwar zum Preis <%= total %>€, je <%= camps.price%>€/Tag.
+                    <br>
+                    Die Bankdaten, die Sie bei uns hinterlegt haben:
+                    <%= bank.iban%>
+                    <%= bank.kontonr%>
+                    <%= bank.blz%>
+                    <%= bank.bic%>
+                </h1>
                 <form action="/dashboard/welcome" method="GET">
                     <button mt-3 class="btn btn-primary mb-4 btn-outline-info" type="submit">Home</button>
                 </form>
-                <h5>
-                    Der Verkäufer wird sich bei Ihnen melden, falls nötig.</h5>
             </div>
         </div>
     </div>

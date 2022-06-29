@@ -1,4 +1,4 @@
-parasails.registerPage('payment-validate', {
+parasails.registerPage('payment', {
     //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
     //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
     //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
@@ -20,8 +20,6 @@ parasails.registerPage('payment-validate', {
             knr: { required: false },
             blz: { required: false },
             bic: { required: true, isBic: true }
-            // bic: regex: /^[a-z]{6}[0-9a-z]{2}([0-9a-z]{3})?\z/i
-            // iban: , regex: /^[A-Z]{2}(?:[ ]?[0-9]){18,20}$/i 
         },
 
 

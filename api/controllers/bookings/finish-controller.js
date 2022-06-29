@@ -36,11 +36,11 @@ module.exports = {
             viewTemplatePath: 'pages/booking/finish'
         },
         notFound: {
-            description: 'Sind in den routes',
+            description: '',
             responseType: 'notFound'
         },
         redirect: {
-            description: 'Dieser Nutzer ist kein Anbieter.',
+            description: 'Dieser Nutzer ist nicht eingeloggt',
             responseType: 'redirect',
         }
     },
@@ -51,12 +51,35 @@ module.exports = {
 
         if (!this.req.me) { throw { redirect: '/' } }
 
+        /*
+        basket:
+        [
+        '07/01/2022',               //von                           0
+        '07/09/2022',               //bis                           1
+        1,                          //userId                        2
+            {                       //camp model                    3
+            createdAt: 1656522063015,
+            updatedAt: 1656522063015,
+            id: 1,
+            name: 'Camp Konstanz',
+            description: 'Campen an der HTWG',
+            price: 10,
+            vermieterId: 1
+            },
+        8                           // #days date difference        4
+        ]
+*/
+
+
         let sessionInhalt = this.req.session.basket
 
 
-        
-        let bis = sessionInhalt[0]
-        let products = sessionInhalt[3]
+        let von = sessionInhalt[0]
+        let bis = sessionInhalt[1]
+        let userId = sessionInhalt[2]
+        let camps = sessionInhalt[3]
+        let tage = sessionInhalt[4]
+
         this.req.session.basket.push(inputs.iban);
         this.req.session.basket.push(inputs.kontonummer);
         this.req.session.basket.push(inputs.blz);
@@ -65,29 +88,46 @@ module.exports = {
         sessionInhalt = this.req.session.basket
         console.log(sessionInhalt)
 
-        //DATENBANK EINTRAG
-
-        let resValues = {
-            bis: sessionInhalt[0],
-            status: "gebucht",
+        //Create Booking
+        /**model:
+         *  von: {type: 'ref',columnType: 'DATE',required: true,},
+            bis: {type: 'ref',columnType: 'DATE',required: true,},
+            total:{type: 'number',  columnType: 'DECIMAL (6,2)',  required: true},
+            gast: {model:'user', required:true,},
+            camp: {model: 'camp',required: true,},
+              // <---- spots: {collection: 'spots',via: 'buchungen'}, //NOT IMPLEMENTED  -->
+         */
+        let total = 0 + sessionInhalt[4] * (camps.price)
+        let dt1 = new Date(sessionInhalt[0]);
+        let dt2 = new Date(sessionInhalt[1]);
+        
+        let book = {
+            von: dt1,
+            bis: dt2,
+            total: total,
             gast: sessionInhalt[2],
-            products: sessionInhalt[3].id
-
+            camp: sessionInhalt[3].id
         }
-        let reservation = await Booking.create(resValues).fetch();
+        
+        let booking = await Booking.create(book).fetch();
 
-        let payValues = {
-            iban: sessionInhalt[4],
-            kontonr: sessionInhalt[5],
-            blz: sessionInhalt[6],
-            bic: sessionInhalt[7],
-            gast: sessionInhalt[3]
+        let bank = {
+            iban: sessionInhalt[5],
+            kontonr: sessionInhalt[6],
+            blz: sessionInhalt[7],
+            bic: sessionInhalt[8],
+            gast: sessionInhalt[2]
         }
-        let payment = await Payment.create(payValues).fetch();
+        let payment = await Payment.create(bank).fetch();
 
         return {
+            von,
             bis,
-            products
+            camps,
+            userId,
+            bank,
+            tage,
+            total
 
         };
     }
