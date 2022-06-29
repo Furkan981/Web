@@ -48,7 +48,6 @@ section .button {
 /* Others */
 .allcenter{
     text-align: -webkit-center;
-    text-align: center;
     text-align: -moz-center;
 }
 aside {
