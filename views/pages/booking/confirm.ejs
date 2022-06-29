@@ -7,20 +7,6 @@
     <title>Confirm booking</title>
 </head>
 
-<script>
-    module.exports = {
-        el: '#app',
-        data: function() {
-            return {
-                message: 'Hello Vue!'
-            }
-        }
-    }
-</script>
-
-
-
-
 <h1 style="text-align: center; margin-top: 3%;">Bestellübersicht</h1>
 <div id="app">
     <section class="py-5">
@@ -64,8 +50,9 @@
                 Preis
             </h4>
             <p class="card-text" id="preis">
-                <%=  %>
+                <%= diffDays * camps.price  %>
             </p>
+            <button id="total">Berechne Gesamtpreis</button>
         </div>
     </div>
     <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
@@ -79,4 +66,3 @@
         </div>
     </div>
 </div>
-
