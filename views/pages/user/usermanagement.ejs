@@ -1,0 +1,40 @@
+<div id="camp">
+    <div class="container allcenter">
+        <h1>User Management</h1>
+
+        <form action="/camp">
+            <label>Suche</label>
+            <input type="text" value="" length="20" name="q">
+            <button type="submit">Suche</button>
+        </form>
+
+        <div class="item-content">
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                </thead>
+                <tbody>
+<!--                     <% camps.forEach(function(camp){ %>
+ -->                        <tr>
+                            <td>
+                                USERNAME
+                                <!-- <%= camp.name %> -->
+                            </td>
+                            <td>
+                                USERMAIL
+<!--                                 <%= camp.price %>
+ -->                            </td>
+                            <td> 
+<!--                             <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a> <a class="badge badge-primary" href="/camp/<%= camp.id %>/edit">Bearbeiten</a></td>-->   
+                                <a class="badge badge-primary" href="/usermanagement">Löschen</a>
+                            </td>
+                        </tr>
+<!--                         <% }); %>
+ -->                </tbody>
+            </table>
+            <a class="btn btn-primary" href="/account">Zurück</a>
+            <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
+        </div>
+    </div>
+</div>

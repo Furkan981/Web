@@ -1,88 +1,129 @@
-<div id="homepage">
-<div class="upper_body">
-    <form action="/camp">
-        <input type="text" value="" length="20" name="q" placeholder="Search..">
-        <button type="submit">Suche</button>
-    </form>
-</div>
-
-<div class="card__container">
-        <div class="card">  
-            <img src="/images/konstanz.jpg" alt="Camp01" class="card__image">
-            <p class="card__name">Konstanz</p>
-            <div class="grid-container">
-                <div class="grid-child-posts">
-                    17€-Nacht
-                </div>
-                <div class="grid-child-followers">
-                    5 freie Plätze
-                </div>
-            </div>
-            <button class="btn draw-border">Infos</button>
-            <button class="btn draw-border">Buchen</button>
-        </div>
-    <div class="card">
-        <img src="/images/mainau.jpg" alt="Camp01" class="card__image">
-        <p class="card__name">Insel Mainau</p>
-        <div class="grid-container">
-            <div class="grid-child-posts">
-                25€-Nacht
-            </div>
-            <div class="grid-child-followers">
-                3 freie Plätze
-            </div>
-        </div>
-        <button class="btn draw-border">Infos</button>
-        <button class="btn draw-border">Buchen</button>
-    </div>
-    <div class="card">
-        <img src="/images/kreuzlingen.jpg" alt="Camp01" class="card__image">
-        <p class="card__name">Kreuzlingen</p>
-        <div class="grid-container">
-            <div class="grid-child-posts">
-                17€-Nacht
-            </div>
-            <div class="grid-child-followers">
-                5 freie Plätze
-            </div>
-        </div>
-        <button class="btn draw-border">Infos</button>
-        <button class="btn draw-border">Buchen</button>
-    </div>
-    <div class="card">
-        <img src="/images/camplogo2.PNG" alt="Camp02" class="card__image">
-        <p class="card__name">Singen</p>
-        <div class="grid-container">
-            <div class="grid-child-posts">
-                10€-Nacht
-            </div>
-            <div class="grid-child-followers">
-                10 freie Plätze
-            </div>
-        </div>
-        <button class="btn draw-border">Infos</button>
-        <button class="btn draw-border">Buchen</button>
-    </div>
-    <div class="card">
-      <img src="/images/campportal.jpg" alt="Camp03" class="card__image">
-       <p class="card__name">Überlingen</p>
-        <div class="grid-container">
-           <div class="grid-child-posts">
-               15€-Nacht
-           </div>
-           <div class="grid-child-followers">
-              32 freie Plätze
+<div id="homepage" v-cloak>
+    <div style="padding-top: 100px; padding-bottom: 25px; color: #e9e2c8;background-image: url(/images/camping.jpg); background-repeat:no-repeat;
+    background-size: cover;
+    background-position: center; " class="d-flex flex-column justify-content-center position-relative" purpose="full-page-hero">
+      <div class="container text-center">
+        <!--Camp-Portal-->
+        <h1 class="display-4 pb-5" style="color: #e9e2c8"><strong>Camp-Portal</strong></h1>
+        <div>
+          <div style="cursor: pointer; bottom: 25px; left: 0;" class="position-absolute w-100 mt-5" purpose="more-info-text" @click="clickHeroButton()">
+            <div style="letter-spacing: 2px;" class="text-uppercase font-weight-bold">Loslegen!</div>
+            <div style="font-size: 20px;">&darr;</div>
           </div>
+        </div>
       </div>
-       <button class="btn draw-border">Infos</button>
-     <button class="btn draw-border">Buchen</button>
     </div>
-</div>
-</div>
+  
+    <!--info-->
+    <div style="background-color: #fff7db;;" class="text-center py-5" purpose="scroll-destination">
+      <div class="container pt-3 pb-5" style="
+      height: inherit;" purpose="about-section">
+        <h3>Das Camp-Portal bietet Unternehmern als auch privaten Personen, kurze und unkomplizierte Möglichkeiten einen Campingplatz zu erstellen. Für Camper bietet die Seite ihr lieblings-Campingplatz schnell und einfach zu reservieren.</h3>
+        <p style="max-width: 800px;" class="mx-auto"> <p style="max-width: 800px;" class="mx-auto">
+          Durch das erstellen eines Accounts und dem Login, haben Sie die Möglichkeit unser breites Spektrum an verschiedenen verfügbaren Campingplätzen einzusehen. 
+          Die Campingplätze werden,wenn vorhanden, mit den gegeben Filtern angezeigt.
+          <hr/>
+              <!--symbols-->
+              <h3>Erleben Sie</h3>
+        <div class="row pt-5" style="width: auto;">
+         
+          <div class="mb-4 mb-sm-0 col-sm">
+            <div style="color: #fff7db; background-color: seagreen; font-size: 35px; line-height: 75px; height: 75px; width: 75px;" class="rounded-circle mx-auto text-center mb-3">
+              <i class="fa fa-map-signs"></i>
+            </div>
+            <h4>Sichere Camps</h4>
+            <p class="text-muted">Erleben Sie ein Abenteuer zusammen mit Ihrer Familie oder auch ganz alleine, ganz ohne Risiko. Die Campingplätze werden durch uns, in jedem Quartal auf Sicherheitsrisikos geprüft.</p>
+          </div>
+          <div class="pt-4 pt-sm-0 mb-4 mb-sm-0 col-sm">
+            <div style="color: #fff7db; background-color: seagreen; font-size: 35px; line-height: 75px; height: 75px; width: 75px;" class="rounded-circle mx-auto text-center mb-3">
+              <i class="fa fa-handshake-o"></i>
+            </div>
+            <h4>Faire Deals</h4>
+            <p class="text-muted">Hier bei uns hast du nur Faire Deals, keine versteckten Kosten und keine Überraschungen.</p>
+          </div>
+          <div class="pt-4 pt-sm-0 col-sm">
+            <div style="color: #fff7db; background-color: seagreen; font-size: 35px; line-height: 75px; height: 75px; width: 75px;" class="rounded-circle mx-auto text-center mb-3">
+              <i class="fa fa-usd"></i>
+            </div>
+            <h4>Zahlung vor Ort</h4>
+            <p class="text-muted">Im Internet zu bezahlen ist unsicher? Ganz egal, bei Camp-Portal zahlst du nur vor Ort, entweder mit der EC-Karte oder Bar.</a></p>
+          </div>
+        </div>
+        <a class="btn btn-outline-info mt-3" href="/faq">Noch fragen?</a>
+      </div>
+    </div>
+  
+    <!--How to-->
+    <div class="container pt-5">
+      <div class="pt-5" purpose="setup-section">
+        <h3 class="text-center">Wie kann ich ein Camp reservieren?</h3>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>1. Erstelle dir zuerst einen Account!</h5>
+          <p>Um den Camp-Portal online zu bedienen musst du dir zuerst einen Account erstellen. Dies kannst <a  href="/signup">hier</a> machen.
+          <blockquote><small>Du kannst dich auch bevor du dich registriest in die <a target="_blank" href="/legal/terms">Terms of Use</a> und <a target="_blank" href="/legal/privacy">Privacy Policy</a> einlesen. </small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>2. Logge dich ein!</h5>
+          <p>Bevor du überhaupt über eine reservierung denkst solltest du dich zuerst einloggen.</p>
+          <blockquote><small>Gib dein Passwort <strong>nie</strong> weiter!</small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>3. Such dir ein Camp aus und reserviere dir Plätze.</h5>
+          <p>Nachdem du dich eingeloggt hast siehst du die ganzen verfügbaren Camps. Falls du wissen willst, wie du ein Camp erstellen kannst, so schau weiter unten bei <strong>Ich will Anbieter werden, wie kann ich mein Camp auflisten?</strong></p>
+          <blockquote><small>Achte vor jeder Reservierung auf andere Termine, welche dir deinen Urlaub kosten könnten!</small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>4. Deine Reservation ist ab Sofort gültig. Viel Spaß!</h5>
+          <p>Deine Reservierung ist ab jetzt gültig, wir wünschen dir viel Spaß.</p>
+          <blockquote><small>Bei Problemem schreib uns oder dem Camp-Verwalter eine e-Mail, oder ruf uns direkt an.</small></blockquote>
+        </div>
 
-<script defer>
-    window.onload = () => {
-        //findCamps()
-    }
-</script>
-<%- /* Expose locals as window.SAILS_LOCALS :: */ exposeLocalsToBrowser() %>
+        <hr/>
+        <hr/>
+
+        <h3 class="text-center">Ich will Anbieter werden, wie kann ich mein Camp auflisten?</h3>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>1. Erstelle dir zuerst einen Account!</h5>
+          <p>Um den Camp-Portal online zu bedienen musst du dir zuerst einen Account erstellen. Dies kannst <a  href="/signup">hier</a> machen.
+          <blockquote><small>Du kannst dich auch bevor du dich registriest in die <a target="_blank" href="/legal/terms">Terms of Use</a> und <a target="_blank" href="/legal/privacy">Privacy Policy</a> einlesen. </small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>2. Logge dich ein!</h5>
+          <p>Bevor du überhaupt über eine reservierung denkst solltest du dich zuerst einloggen.</p>
+          <blockquote><small>Gib dein Passwort <strong>nie</strong> weiter!</small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>3. Account&Settings </h5>
+          <p>Als nächstes klicke rechts oben auf Account und dann auf Settings.</p>
+          <blockquote><small>Achte vor jeder Reservierung auf andere Termine, welche dir deinen Urlaub kosten könnten!</small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>4. My Camps&Hinzufügen </h5>
+          <p>Hier siehst du dein Account und die Einstellung dazu. Um auf Camps zu gelangen klicke zunächst auf My Camps und dann auf Hinzufügen. Gib hier all die Filter von deinem Camp an und klicke auf hinzufügen.</p>
+          <blockquote><small>Du kannst dir davor auch gerne die anderen Camps auf der Campübersichtswebseite anschauen.</small></blockquote>
+        </div>
+        <div class="position-relative my-5" purpose="setup-step">
+          <h5>5. Dein Camp ist ab jetzt jedem anderen Nutzer sichtbar. Viel Erfolg!</h5>
+          <p>Dein Camp kann jetzt von jedem potenziellen Kunden eingesehen werden. Wir wünschen dir viel Erfolg in deinem Camp.</p>
+          <blockquote><small>Achte bitte darauf jeden Fair zu behandeln.</small></blockquote>
+        </div>
+      </div>
+      
+      <!--Bottom-->
+      <hr/>
+      <div class="text-center py-5" purpose="pep-talk">
+        <h3>Schau auch in unseren Sozialen Medien vorbei!</h3>
+        <p style="max-width: 800px;" class="mx-auto">
+          Beim folgen unserer Sozialen Median kannst du bei SAGENHAFTE DEALS zuschlagen und bei Verlosungen Teilnehmen.</p>
+          <div class="">
+            <!--<h4>follow us</h4>-->
+            <div class="social-links social-links">
+                <a href="#" style="color: white; background-color: black"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="color: white; background-color: black"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="color: white; background-color: black"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: white; background-color: black"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>

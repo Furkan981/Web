@@ -66,7 +66,7 @@ module.exports.routes = {
 
    
   // My Routes
-  //
+  'GET /testd' : { view: 'pages/testssss'},
   'GET /admin': { view: 'pages/admin' },
   'GET /test': { controller: 'CampArealController', action:'find' },
   // test home 'GET /admin': { view: 'pages/camp/all-camps' },
@@ -83,7 +83,9 @@ module.exports.routes = {
 
 
 //////////////////////////////////////////////////////////////////////
-   
+   //USERS
+   'GET /usermanagement' : { view: 'pages/user/usermanagement'},
+
   //Camps filterSuche
   'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
   'GET /camp/:id': { action: 'camp/find-one' },

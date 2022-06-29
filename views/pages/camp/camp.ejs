@@ -1,5 +1,5 @@
 <div id="camp">
-    <div class="container">
+    <div class="container allcenter">
         <h1>Camping-Plaetze</h1>
 
         <form action="/camp">
@@ -24,11 +24,13 @@
                                 <%= camp.price %>
                             </td>
                             <td> 
-                            <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a></td>
+                            <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a> <!-- Nur Anbieter --> <a class="badge badge-primary" href="/camp/<%= camp.id %>/edit">Bearbeiten</a></td>
+                        </td>
                         </tr>
                         <% }); %>
                 </tbody>
             </table>
+            <a class="btn btn-primary" href="/account">Zurück</a>
             <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
         </div>
     </div>
