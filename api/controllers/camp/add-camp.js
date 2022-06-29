@@ -33,9 +33,11 @@ module.exports = {
 
   exits: {
     success: {
-      responseType: 'view',
-      viewTemplatePath: 'pages/camp/show'
-    },
+      responseType: 'redirect',
+  },
+  redirect: {
+      responseType: 'redirect'
+  }
   },
 
 
@@ -89,7 +91,8 @@ module.exports = {
     sails.log.debug(camp)
     
     if (!camp) { throw 'notFound'; }
-  
+    return "/camp";
+    
     return {
       message: "Successfully created.",
       camp: camp,

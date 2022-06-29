@@ -90,7 +90,7 @@ module.exports.routes = {
   'GET /camp': { action: 'camp/find' },
   //'GET /camp': { action: 'CampArealController' },
   
-  // BOOT Einzelansicht
+  // Camp Einzelansicht
   //
   'GET /camp/show-detail-camp/:id': { action: 'camp/view-detail-camp' },
   'GET /api/v1/showmycamp': { action: 'camp/show-my-camps' },
@@ -106,8 +106,7 @@ module.exports.routes = {
  // Booking Prozess
   //
   'GET /camp/:id/booking': { action: 'bookings/booking' },
-
-  'GET /booking/confirm': { action: 'bookings/booking' },
+  'GET /booking/confirm': { action: 'bookings/confirm' },
   'GET /booking/payment': { action: 'bookings/payment-controller' },
   'GET /booking/finish': { action: 'bookings/finish-controller' },
   'GET /api/v1/showmybookings': { action: 'bookingprocess/show-my-booking-controller' },

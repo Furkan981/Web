@@ -4,25 +4,25 @@ module.exports = {
     friendlyName: 'Booking',
 
 
-    description: 'Bookingprocess start.',
+    description: 'Bookingprocess.',
 
 
     inputs: {
-        id: {
-            description: 'The products of the user to look up.',
-            type: 'number',
-            required: true
+       
+        datebis: {
+            type: 'string',
+            require: true
         },
-
     },
+
 
     exits: {
         success: {
             responseType: 'view',
-            viewTemplatePath: 'pages/booking/booking'
+            viewTemplatePath: 'pages/booking/confirm'
         },
         notFound: {
-            description: 'No camp with the specified ID was found in the database.',
+            description: 'Sind in den routes',
             responseType: 'notFound'
         },
         redirect: {
@@ -32,29 +32,9 @@ module.exports = {
     },
 
 
-    fn: async function({id}) {
+    fn: async function(inputs) {
 
 
-        if (!this.req.me) {
-            console.log("Sie sind nicht eingeloggt!")
-            throw { redirect: '/' }
-        }
-
-        let camps = await Camp.findOne({ id: id });
-        if (!camps) { throw 'kein Camp gefunden'; }
-        let spots = await Spots.find( {owner : camps.id})
-        if (!spots) { throw 'Dieser Camp hat keine Plätze zum reservieren'; }
-        
-        this.req.session.basket = [];
-        this.req.session.basket.push(camps)
-        this.req.session.basket.push(spots)
-        return {
-            camps: camps,
-            spots:spots
-        };
-
-
-/* 
         if (!this.req.me) { throw { redirect: '/' } }
 
         //Session
@@ -86,7 +66,7 @@ module.exports = {
             userId,
             products,
 
-        }; */
+        };
     }
 
 

@@ -1,4 +1,4 @@
-parasails.registerPage('addCamps', {
+parasails.registerPage('camp', {
     //  ╦╔╗╔╦╔╦╗╦╔═╗╦    ╔═╗╔╦╗╔═╗╔╦╗╔═╗
     //  ║║║║║ ║ ║╠═╣║    ╚═╗ ║ ╠═╣ ║ ║╣
     //  ╩╝╚╝╩ ╩ ╩╩ ╩╩═╝  ╚═╝ ╩ ╩ ╩ ╩ ╚═╝
@@ -15,12 +15,7 @@ parasails.registerPage('addCamps', {
 
         // A set of validation rules for our form.
         // > The form will not be submitted if these are invalid.
-        formRules: {
-            name: { required: true },
-            description: { required: true, maxLength: 200 },
-            price: { required: false },
-            spots: { required: false },
-        },
+
 
         cloudError: '',
     },

@@ -29,7 +29,7 @@ module.exports = {
   fn: async function ({id}) {
 
     let camp = await Camp.findOne({ id: id });
-    let spots = await Spots.find({ owner: camp.vermieterId });
+    let spots = await Spots.find({ owner: camp.id });
 
      //Session
      let sessionInhalt = this.req.session.basket
@@ -40,7 +40,7 @@ module.exports = {
      this.req.session.basket.push(spots);
      this.req.session.basket.push(this.req.session.userId);
      /* this.req.session.basket.push(sessionInhalt[0]); */
-     console.log("basket:")
+     console.log("camp/show Basket:")
      sessionInhalt = this.req.session.basket
      console.log(sessionInhalt)
 

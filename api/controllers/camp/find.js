@@ -18,6 +18,10 @@ module.exports = {
       viewTemplatePath: 'pages/camp/camp'
       //viewTemplatePath: 'pages/dashboard/welcome'
     },
+    redirect: {
+      description: 'Dieser Nutzer ist kein Anbieter.',
+      responseType: 'redirect',
+  }
   },
 
   fn: async function (inputs) {
