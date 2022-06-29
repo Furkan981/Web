@@ -21,7 +21,7 @@
                         <%= camps.name %>
                     </h1>
                     <div class="fs-5 mb-5">
-                        <span> <%= camps.price %>€</span>
+                        <span> <%= camps.price %>€ pro Tag</span>
                     </div>
 
                     <form action="/booking/payment" method="GET">
@@ -47,12 +47,12 @@
     <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
         <div class="card-body">
             <h4 class="card-title">
-                Preis
+               Totaler Preis
             </h4>
             <p class="card-text" id="preis">
-                <%= diffDays * camps.price  %>
+                <%= diffDays * camps.price  %> €
             </p>
-            <button id="total">Berechne Gesamtpreis</button>
+        
         </div>
     </div>
     <div class="col-lg-2 m-2" style="border: 2px solid #178ca4; border-radius: 10px;">
