@@ -18,6 +18,7 @@ module.exports.routes = {
   'GET /dashboard/welcome': { action: 'dashboard/view-welcome' },
 
   'GET /faq':                { action:   'view-faq' },
+  'GET /imprint':            { view:   'pages/legal/imprint' },
   'GET /legal/terms':        { action:   'legal/view-terms' },
   'GET /legal/privacy':      { action:   'legal/view-privacy' },
   'GET /contact':            { action:   'view-contact' },
@@ -71,7 +72,7 @@ module.exports.routes = {
   'GET /test': { controller: 'CampArealController', action:'find' },
   // test home 'GET /admin': { view: 'pages/camp/all-camps' },
   'GET /menu': { view: 'pages/camp/all-camps' },
-  // 
+  
   // Camps hinzufügen
   'GET /camp/new': { view: 'pages/camp/new' },
             //'GET /camp/new': { action: 'camp/view-add-camps' },
@@ -87,8 +88,9 @@ module.exports.routes = {
    'GET /usermanagement' : { view: 'pages/user/usermanagement'},
 
 
-   //
+   //RESERVATIONS
    'GET /reservations' : { view: 'pages/booking/reservations'},
+
 
   //Camps filterSuche
   'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
