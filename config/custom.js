@@ -22,7 +22,7 @@ module.exports.custom = {
   * > but it can also be used for user-uploaded images, webhooks, etc.      *
   *                                                                         *
   **************************************************************************/
-  baseUrl: 'http://localhost:1337',
+  //baseUrl: 'http://localhost:1337',
 
   /**************************************************************************
   *                                                                         *
@@ -32,7 +32,7 @@ module.exports.custom = {
   * > that is displayed all over the app when it's first generated.         *
   *                                                                         *
   **************************************************************************/
-  platformCopyrightYear: '2021',
+  //platformCopyrightYear: '2021',
 
   /**************************************************************************
   *                                                                         *

@@ -374,7 +374,7 @@
   *                                                                         *
   ***************************************************************************/
   custom: {
-    baseUrl: 'https://.herokuapp.com',
+    baseUrl: 'https://camping-portal.herokuapp.com',
     //internalEmailAddress: 'support@example.com',
 
     // sendgridSecret: 'SG.fake.3e0Bn0qSQVnwb1E4qNPz9JZP5vLZYqjh7sn8S93oSHU',
