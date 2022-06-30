@@ -98,8 +98,11 @@
             </div>
             <div class="cancelbutton">
                 <a class="btn btn-primary" href="/camp/<%=camp.id%>/booking">Buchen</a>
-            <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Bearbeiten</a>
-            <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
+                <% if(me.isSuperAdmin || me.id == camp.vermieterId) { %>
+                    <a class="btn btn-primary" href="/camp/<%=camp.id%>/edit">Bearbeiten</a>
+                    <a class="btn btn-primary" href="/camp/<%=camp.id%>/destroy">Löschen</a>
+                    <% }  %>
+           
             </div>
     </div>
 </div>

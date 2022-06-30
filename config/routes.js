@@ -66,16 +66,26 @@ module.exports.routes = {
   'POST  /api/v1/observe-my-session':                 { action: 'observe-my-session', hasSocketFeatures: true },
 
    
-  // My Routes
+
+  //////////////////////////////////////////////////////////////////////////////////////////////
+
+  //Admin relocate User-Settings (different from normal user)
   'GET /admin': {action: 'account/view-account-overview-admin' },
-  'GET /test': { controller: 'CampArealController', action:'find' },
+  //Admin - see USERS
+  'GET /usermanagement' : { action: 'users/show-all-users'},
+  'GET  /users/show-all-users': { action: 'users/show-all-users' },
+  'GET /users/delete-user/:id': { action: 'users/delete-user' },
   
+
+
+  //used for client side filtering with ajax (fetch) camp.find
+  'GET /test': { controller: 'CampArealController', action:'find' },
   // //Camps filterSuche
-  'GET /api/v1/filterproducts': { action: 'camp/filter-camps' },
   //'GET /camp': { action: 'CampArealController' },
   'GET /camp': { action: 'camp/find' },
   'GET /camp/:id': { action: 'camp/find-one' },
-  // Camps hinzufügen
+ 
+  // Camps CRUD
   'GET /camp/new': { action: 'camp/view-add-camps' },
             //'GET /camp/new': { action: 'camp/view-add-camps' },
   'POST /camp': { action: 'camp/add-camp' },
@@ -83,64 +93,44 @@ module.exports.routes = {
   'POST /camp/:id/update': { action: 'camp/update-camp' },
   'GET /camp/:id/destroy': { action: 'camp/delete-camp' },
 
-// test home 'GET /admin': { view: 'pages/camp/all-camps' },
-/**
- * all-camps.ejs
- * 
- */
-
-
-//////////////////////////////////////////////////////////////////////
-   //USERS
-   'GET /usermanagement' : { action: 'users/show-all-users'},
-
-
-   //
-   'GET /reservations' : { action: 'bookings/show-my-booking-controller'},
-   'GET /reservations/:id/delete' : { action: 'bookings/delete-booking'},
-  
-  
-  // Camp Einzelansicht
-  //
-  'GET /camp/show-detail-camp/:id': { action: 'camp/view-detail-camp' },
-  'GET /api/v1/showmycamp': { action: 'camp/show-my-camps' },
-  'GET /api/v1/showmycamps-admin': { action: 'camp/show-all-camps-admin' },
-  'GET /show-my-camps': { view: 'pages/camp/show-my-camp' },
-  'GET /show-all-camp': { action: 'camp/view-show-all-camp' },
-  'GET /camp/delete-camp/:id': { action: 'camp/delete-camp' },
-  'GET /camp/delete-camp-admin/:id': { action: 'camp/delete-camp-admin' },
-  'GET /camp/edit/:id': { action: 'camp/edit-camp' },
-  'POST /camp/:id/update-camp': { action: 'camp/update-camp' },
-
-
+  //////////////////////////////////////////////////////////////////////
+ 
  // Booking Prozess
+ //Customer see bookings/delete
+ 'GET /reservations' : { action: 'bookings/show-my-booking-controller'},
+ 'GET /reservations/:id/delete' : { action: 'bookings/delete-booking'},
   //
   'GET /camp/:id/booking': { action: 'bookings/booking' },
   'GET /camp/:id/booking/confirm': { action: 'bookings/confirm' },
   'GET /booking/payment': { action: 'bookings/payment-controller' },
   'GET /booking/finish': { action: 'bookings/finish-controller' },
-  'GET /api/v1/showmybookings': { action: 'bookingprocess/show-my-booking-controller' },
 
-  // Anbieter werden
-  'GET /getAnbieter': { action: 'anbieter/view-anbieter-werden' },
-  'POST /anbieter/anbieter-werden': { action: 'anbieter/anbieter-werden' },
 
-  
-  'GET /show-my-booking': { view: 'pages/booking/show-my-booking' },
+
+
+
+
+
+
 
  // Account 
- 'GET /account/edit-user/:id': { action: 'users/view-edit-profil-admin' },
- 'GET  /users/show-all-users': { action: 'users/show-all-users' },
- 'GET /users/delete-user/:id': { action: 'users/delete-user' },
- 'GET /users/show-all-users': { view: 'pages/account/show-all-users' },
+ // Implementieren in Zukunft?
+ /*
+ //'GET /account/edit-user/:id': { action: 'users/view-edit-profil-admin' },
+ //'GET /users/show-all-users': { view: 'pages/account/show-all-users' },
  'GET /account/edit-password-admin': { action: 'users/view-edit-password-admin' },
  'POST /account/confirm': { action: 'users/update-password-admin' },
  'GET /account/edit-account-admin': { action: 'users/view-edit-account-admin' },
  'POST /account/update-account': { action: 'users/update-account-admin' },
-
-  //test dev
-/*
+*/
  
+ 
+ 
+ 
+ 
+ 
+ //test outdated
+/*
     'GET /camp/new': { controller: 'CampArealController', action:'new' },
     'POST /camp': { controller: 'CampArealController', action:'create' },
     'GET /camp/:id/edit': { controller: 'CampArealController', action: 'editOne' },
@@ -148,6 +138,16 @@ module.exports.routes = {
     'GET /camp/:id/delete': { controller: 'CampArealController', action: 'destroyOne' },
     'GET /camp/:id': { controller: 'CampArealController', action: 'findOne' },
     'GET /camp': { controller: 'CampArealController', action: 'find' },
+  //Nicht mehr in Use + comb with js-script 
+  //'GET /camp/show-detail-camp/:id': { action: 'camp/view-detail-camp' }, find-camps.js (assets)
+  //'GET /api/v1/showmycamp': { action: 'camp/show-my-camps' },
+  //'GET /api/v1/showmycamps-admin': { action: 'camp/show-all-camps-admin' },
+  //'GET /show-my-camps': { view: 'pages/camp/show-my-camp' },
+  //'GET /show-all-camp': { action: 'camp/view-show-all-camp' },
+  //'GET /camp/delete-camp/:id': { action: 'camp/delete-camp' },
+  //'GET /camp/delete-camp-admin/:id': { action: 'camp/delete-camp-admin' },
+  //'GET /camp/edit/:id': { action: 'camp/edit-camp' },
+  //'POST /camp/:id/update-camp': { action: 'camp/update-camp' },
  */
 
 };

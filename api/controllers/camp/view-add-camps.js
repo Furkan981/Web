@@ -21,8 +21,8 @@ module.exports = {
 
 
     fn: async function() {
-        if (!this.req.me.isAnbieter && !this.req.me.isSuperAdmin) {
-            console.log('Sie sind kein Anbieter! Werden Sie zuerst Anbieter');
+        if (/*!this.req.me.isAnbieter && !this.req.me.isSuperAdmin*/ !this.req.me) {
+            console.log('Sie sind nicht dazu befähigt.');
             throw { redirect: '/' };
         }
     }

@@ -2,14 +2,6 @@
 
 module.exports = {
     attributes: {
-      /*
-      customerId: {
-  
-        type: 'number',
-        required: true,
-        unique: true
-      },
-      */
   
       firstName: {
         type: 'string',

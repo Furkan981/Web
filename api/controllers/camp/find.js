@@ -25,6 +25,10 @@ module.exports = {
   },
 
   fn: async function (inputs) {
+    if (!this.req.me) {
+      console.log('Anmelden');
+      throw { redirect: '/' };
+  }
 
     if (!this.req.me.isSuperAdmin) {
       let camps;
@@ -36,13 +40,13 @@ module.exports = {
         vermieterId: this.req.me.id
       })
     } else {
-      camps = await Camp.find();
+      camps = await Camp.find({vermieterId: this.req.me.id});
     }
     sails.log.debug(camps)
     return ({ camps: camps });
   
-  }
-
+  }else{
+      //für admins
     let camps;
     if (inputs.q && inputs.q.length > 0) {
       camps = await Camp.find({
@@ -56,4 +60,5 @@ module.exports = {
     sails.log.debug(camps)
     return ({ camps: camps });
   }
+}
 };

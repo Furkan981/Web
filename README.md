@@ -1,28 +1,61 @@
-# tutorial-5
+# Teilnehmer
 
-a [Sails v1](https://sailsjs.com) application
-
-
-### Links
-
-+ [Sails framework documentation](https://sailsjs.com/get-started)
-+ [Version notes / upgrading](https://sailsjs.com/documentation/upgrading)
-+ [Deployment tips](https://sailsjs.com/documentation/concepts/deployment)
-+ [Community support options](https://sailsjs.com/support)
-+ [Professional / enterprise options](https://sailsjs.com/enterprise)
+Furkan Yilmaz, Arbor Uka, Raphael Bellstedt
 
 
-### Version info
+# Zusammenfassung und Funktionalität
 
-This app was originally generated on Mon Nov 15 2021 17:54:34 GMT+0100 (Central European Standard Time) using Sails v1.5.0.
+  Das Campingportal ist eine Webseite, mit der Camper
+  die Möglichkeit haben, online Stellplätze auf Camps
+  zu reservieren. Gleichzeitig können Betreiber der 
+  Camps ihre Stellplätze online verwalten. Beispielsweise
+  können Betreiber den Stellplätzen einen Preis und eine 
+  geeignete Beschreibung hinzufügen. Mit einer Suche mit
+  Parametern wie Preis und dem Filtern nach verfügbaren Plätzen
+  können Benutzer sich somit über eine Auswahl von 
+  Campingplätzen informieren.
+ 
 
-<!-- Internally, Sails used [`sails-generate@2.0.4`](https://github.com/balderdashy/sails-generate/tree/v2.0.4/lib/core-generators/new). -->
+# Technische Informationen
+
+* jQuery: Auf der Welcome Page zum client side search, damit Daten nur 
+  einmalig, beim betreten der Webseite geladen werden müssen
+  
+* JSON: Wird verwendet, um die Daten zu übertragen von der Datenbank
+ 
+* validation of input: Beim einloggen werden die Daten auf Vollständigkeit
+  und Korrektheit überprüft, damit kein fehlerhaftes Anmelden möglich ist
+
+  
+## Implementierung
+
+User Management:
+* User: Kann sich auf der Homepage informieren und das Impressum lesen
+* Eingeloggter User: Kann ein Stellplatz suchen, filtern und buchen (sowie sein eigenes löschen mit Cascade auf Buchungen)
+* Admin: Kann alle Stellplätze löschen/Kann User sehen und löschen (ebenfalls für User -> cascade delete booking)
+
+Session Management:
+Beim Buchungsprozess wird der Benutzer über zwei Formulare geleitet, wobei
+die Daten in der Session zwischengespeichert werden und erst nach Abschließen
+des Prozesses werden die Daten in die Datenbank geschrieben. Zunächst muss der
+Nutzer einen Stellplatz auswählen und anschließend die Zahlungsinformationen 
+eingeben.
 
 
-This project's boilerplate is based on an expanded seed app provided by the [Sails core team](https://sailsjs.com/about) to make it easier for you to build on top of ready-made features like authentication, enrollment, email verification, and billing.  For more information, [drop us a line](https://sailsjs.com/support).
+# Styling
+
+Im Rahmen des Stylings der Applikation wurde sowohl klassische css Dateien
+verwendet, als auch inline-css und Bootstrap. Bootstrap Standards vereinfachen
+grundlegende Designs. CSS wurde eingesetzt, um das Design zu verfeinern und auf
+die Gegebenheit des Tools zu spezialisieren. Auch für das responsive Design wurde
+Bootstrap eingesetzt. 
 
 
-<!--
-Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
--->
+# SEO
+
+* Meta-Tag (describtion) Eingebunden
+* Social Media Links exemplarisch eingebunden
+* Keywords in Überschriften eingebaut
+* Kurze und verständliche URLs verwendet
+* Responsive Design
 

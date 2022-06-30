@@ -28,13 +28,20 @@
                                 <%= camp.price %>
                             </td>
                             <td> 
-                            <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a> <!-- Nur Anbieter --> <a class="badge badge-primary" href="/camp/<%= camp.id %>/edit">Bearbeiten</a></td>
+                            <a class="badge badge-primary" href="/camp/<%= camp.id %>">Anzeigen</a> <!-- Nur Anbieter --> 
+                            <a class="badge badge-primary" href="/camp/<%= camp.id %>/edit">Bearbeiten</a>
+                            <a class="badge badge-primary" href="/camp/<%= camp.id %>/destroy">Löschen</a>
+                            </td>
                         </td>
                         </tr>
                         <% }); %>
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="/account">Zurück</a>
+            <% if(me.isSuperAdmin) { %>
+                <a class="btn btn-primary" href="/admin">Zurück</a>
+            <% } else { %>
+                <a class="btn btn-primary" href="/account">Zurück</a>
+                <% }  %>
             <a class="btn btn-primary" href="/camp/new">Hinzufügen</a>
         </div>
     </div>

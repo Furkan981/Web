@@ -1,4 +1,5 @@
 /* 
+    Camps attr:
     avatar:{type: 'ref', columnType:'blob', required: true},
     email: {type: 'string',required : true},
     phone: {type: 'string',required : true},
@@ -9,8 +10,8 @@
 
 
 
-
-    wc:{type: 'boolean', defaultsTo: false, },
+    Filter attr:
+        wc:{type: 'boolean', defaultsTo: false, },
         internet:{type: 'boolean', defaultsTo: false, },
         dusche:{type: 'boolean', defaultsTo: false, },
         hunde:{type: 'boolean', defaultsTo: false, },

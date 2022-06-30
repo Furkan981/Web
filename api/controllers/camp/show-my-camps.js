@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
 
 
     friendlyName: 'View welcome page',
@@ -46,3 +46,4 @@ module.exports = {
 
 
 };
+*/

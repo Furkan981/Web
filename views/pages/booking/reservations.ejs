@@ -9,7 +9,8 @@
                 <thead>
                     <th>Datum</th>
                     <th>Preis</th>
-                    <th>Camp</th>
+                    <th>Camp-id</th>
+                    <th>book-id</th>
                 </thead>
                 <tbody>
                      <% bookings.forEach(function(booking){ %> 
@@ -21,8 +22,9 @@
                                 <%= booking.total %> 
                             </td>
                             <td>
-                                <%= booking.camp %> <%= booking.id %>
+                                <%= booking.camp %> 
                             </td>
+                            <td><%= booking.id %></td>
                             <td> 
                             <a class="badge badge-primary" href="/reservations/<%= booking.id %>/delete">Stornieren</a>
                             

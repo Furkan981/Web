@@ -1,4 +1,4 @@
-module.exports = {
+/*module.exports = {
 
 
     friendlyName: 'View edit password',
@@ -34,3 +34,4 @@ module.exports = {
 
 
 };
+*/
